@@ -16,6 +16,9 @@ return {
         view_options = {
           show_hidden = true,
         },
+        win_options = {
+          signcolumn = 'yes:2',
+        },
       }
 
       -- Open parent directory in current window
@@ -24,5 +27,14 @@ return {
       -- Open parent directory in floating window
       vim.keymap.set('n', '<space>-', require('oil').toggle_float)
     end,
+  },
+  {
+    'refractalize/oil-git-status.nvim',
+
+    dependencies = {
+      'stevearc/oil.nvim',
+    },
+
+    config = true,
   },
 }
