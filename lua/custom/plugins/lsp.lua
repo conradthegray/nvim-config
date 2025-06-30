@@ -4,6 +4,9 @@ return {
     dependencies = {
       'williamboman/mason-lspconfig.nvim',
       'neovim/nvim-lspconfig',
+
+      -- Allows extra capabilities provided by blink.cmp
+      'saghen/blink.cmp',
     },
     opts = {
       servers = {
@@ -85,6 +88,8 @@ return {
           end
         end,
       })
+
+      require('blink.cmp').get_lsp_capabilities()
 
       -- Diagnostic Config
       -- See :help vim.diagnostic.Opts
@@ -293,7 +298,7 @@ return {
 --       --  By default, Neovim doesn't support everything that is in the LSP specification.
 --       --  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
 --       --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
---       local capabilities = require('blink.cmp').get_lsp_capabilities()
+--       local /capabilities = require('blink.cmp').get_lsp_capabilities()
 --
 --       -- Enable the following language servers
 --       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
