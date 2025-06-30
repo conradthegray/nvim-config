@@ -138,6 +138,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Start terminal in edit mode (so I can start typing commands)
 vim.api.nvim_create_autocmd('TermOpen', {
   group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
   callback = function()
