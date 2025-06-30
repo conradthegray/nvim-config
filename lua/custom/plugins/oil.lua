@@ -21,11 +21,26 @@ return {
         },
       }
 
-      -- Open parent directory in current window
-      vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
+      -- Open parent directory in floating window (with '-')
+      vim.keymap.set('n', '-', require('oil').open_float, { desc = 'Open Oil in floating window' })
 
-      -- Open parent directory in floating window
-      vim.keymap.set('n', '<space>-', require('oil').toggle_float)
+      -- Close Oil floating window with <Esc>
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "oil",
+        callback = function(args)
+          local winid = vim.api.nvim_get_current_win()
+          local config = vim.api.nvim_win_get_config(winid)
+          if config.relative ~= "" then
+            vim.keymap.set('n', '<Esc>', '<CMD>q<CR>', { buffer = args.buf, silent = true })
+          end
+        end,
+      })
+
+      -- Open parent directory in current window
+      -- vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
+      --
+      -- -- Open parent directory in floating window
+      -- vim.keymap.set('n', '<space>-', require('oil').open_float)
     end,
   },
   {
