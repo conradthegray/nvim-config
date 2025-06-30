@@ -3,6 +3,11 @@ return {
     'folke/snacks.nvim',
     priority = 1000,
     lazy = false,
+    explorer = {
+      layout = {
+        cycle = false,
+      },
+    },
     picker = {
       enabled = true,
       matchers = {
@@ -83,6 +88,15 @@ return {
       },
     },
     keys = {
+      -- Explorer
+      {
+        '<leader>ee',
+        function()
+          require('snacks').explorer()
+        end,
+        desc = 'Open [Explorer]',
+      },
+
       -- Lazygit
       {
         '<leader>lg',
