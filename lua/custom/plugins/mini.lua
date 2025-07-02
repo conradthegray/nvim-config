@@ -17,6 +17,9 @@ return {
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
+
+      -- Enable autopairing
+      require('mini.pairs').setup()
     end,
   },
 }
