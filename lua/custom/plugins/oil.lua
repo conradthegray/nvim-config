@@ -35,21 +35,37 @@ return {
           end
         end,
       })
-
-      -- Open parent directory in current window
-      -- vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
-      --
-      -- -- Open parent directory in floating window
-      -- vim.keymap.set('n', '<space>-', require('oil').open_float)
     end,
   },
   {
     'refractalize/oil-git-status.nvim',
-
-    dependencies = {
-      'stevearc/oil.nvim',
-    },
-
-    config = true,
+    dependencies = { 'stevearc/oil.nvim' },
+    config = function()
+      require('oil-git-status').setup {
+        show_ignored = true, -- Display files ignored by Git
+        symbols = {
+          index = {
+            ['A'] = '✚', -- Added
+            ['D'] = '✖', -- Deleted
+            ['M'] = '', -- Modified
+            ['R'] = '➜', -- Renamed
+            ['C'] = '', -- Copied
+            ['T'] = '', -- Type changed
+            ['U'] = '', -- Unmerged
+            ['?'] = '?', -- Untracked
+            ['!'] = '', -- Ignored
+          },
+          working_tree = {
+            ['A'] = '+', -- Added
+            ['D'] = '✖', -- Deleted
+            ['M'] = '', -- Modified
+            ['R'] = '➜', -- Renamed
+            ['C'] = '', -- Copied
+            ['T'] = '', -- Type changed
+            ['U'] = '', -- Unmerged
+          },
+        },
+      }
+    end,
   },
 }
