@@ -231,7 +231,7 @@ return {
         function()
           require('snacks').picker.git_branches { layout = 'select' }
         end,
-        desc = 'Pick and Switch Git Branches',
+        desc = 'Pick and Switch [G]it [Br]anches',
       },
 
       -- Other
