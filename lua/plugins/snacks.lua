@@ -5,6 +5,7 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
+      terminal = {},
       dashboard = {
         ---@class snacks.dashboard.Config
         preset = {
@@ -164,23 +165,32 @@ return {
         function()
           require('snacks').explorer()
         end,
-        desc = 'Open [Explorer]',
+        desc = 'Open [E]xplorer',
+      },
+
+      -- Terminal
+      {
+        '<leader>tt',
+        function()
+          require('snacks').terminal()
+        end,
+        desc = 'Open [T]erminal',
       },
 
       -- Lazygit
       {
-        '<leader>lg',
+        '<leader>gg',
         function()
           require('snacks').lazygit()
         end,
-        desc = '[L]azy[G]it',
+        desc = 'Lazy[G]it',
       },
       {
-        '<leader>ll',
+        '<leader>gl',
         function()
           require('snacks').lazygit.log()
         end,
-        desc = '[L]azygit [L]ogs',
+        desc = 'LazyGit [L]ogs',
       },
 
       -- Snacks Picker
