@@ -15,7 +15,9 @@ return {
               key = 'f',
               desc = 'Find File',
               action = function()
-                require('snacks').picker.files()
+                require('snacks').picker.files {
+                  hidden = true,
+                }
               end,
             },
             {
@@ -197,7 +199,9 @@ return {
       {
         '<leader>sf',
         function()
-          require('snacks').picker.files()
+          require('snacks').picker.files {
+            hidden = true,
+          }
         end,
         desc = '[S]earch [F]iles',
       },
