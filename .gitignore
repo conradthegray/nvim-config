@@ -5,3 +5,7 @@ nvim
 
 spell/
 lazy-lock.json
+
+# Custom plugins
+lua/custom/*.lua
+!lua/custom/init.lua
