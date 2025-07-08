@@ -40,7 +40,7 @@ External Requirements:
 ### Install NeoVimcent
 
 > [!NOTE]
-> [Backup](#FAQ) your previous configuration (if any exists)
+> Backup your previous configuration (if any exists)
 
 Neovim's configurations are located under the following paths, depending on your OS:
 
@@ -64,13 +64,13 @@ git clone https://github.com/conradthegray/nvim-config "${XDG_CONFIG_HOME:-$HOME
 
 If you're using `cmd.exe`:
 
-```
+```sh
 git clone https://github.com/conradthegray/nvim-config "%localappdata%\nvim"
 ```
 
 If you're using `powershell.exe`
 
-```
+```sh
 git clone https://github.com/conradthegray/nvim-config "${env:LOCALAPPDATA}\nvim"
 ```
 
@@ -83,3 +83,9 @@ Start Neovim
 ```sh
 nvim
 ```
+
+## Plugins
+
+Place config files for plugins in the `lua/plugins` folder.
+
+There is also `lua/custom` folder for plugins specific for that machine (like work laptop, etc.) that won't tracked by Git.
