@@ -171,23 +171,7 @@ rtp:prepend(lazypath)
 --  To update plugins you can run
 --    :Lazy update
 --
--- NOTE: Here is where you install your plugins.
 require('lazy').setup({
-  -- Detect tabstop and shiftwidth automatically
-  'NMAC427/guess-indent.nvim',
-
-  -- Highlight todo, notes, etc in comments
-  {
-    'folke/todo-comments.nvim',
-    event = 'VimEnter',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-    opts = {
-      signs = false,
-    },
-  },
-
   { import = 'plugins' },
   { import = 'custom' },
 }, {
