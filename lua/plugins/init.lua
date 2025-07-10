@@ -15,4 +15,10 @@ return {
       signs = false,
     },
   },
+
+  -- Show which LSP is loaded
+  {
+    'j-hui/fidget.nvim',
+    opts = {},
+  },
 }

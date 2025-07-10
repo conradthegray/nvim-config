@@ -16,14 +16,26 @@ return {
           'lua_ls',
           'eslint',
           'ts_ls',
+          'denols',
           'rust_analyzer',
           'pyright',
         },
       }
 
+      local lspconfig = require 'lspconfig'
+
       local servers = {
         lua_ls = {},
-        ts_ls = {},
+        ts_ls = {
+          root_dir = lspconfig.util.root_pattern { 'package.json', 'tsconfig.json' },
+        },
+        denols = {
+          root_dir = lspconfig.util.root_pattern { 'deno.json', 'deno.jsonc' },
+          init_options = {
+            lint = true,
+            unstable = true,
+          },
+        },
         eslint = {},
         tailwindcss = {},
         rust_analyzer = {},
@@ -104,7 +116,7 @@ return {
             [vim.diagnostic.severity.HINT] = '󰌶 ',
           },
         } or {},
-        virtual_text = {
+        virtual_lines = {
           source = 'if_many',
           spacing = 2,
           format = function(diagnostic)

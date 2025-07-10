@@ -35,9 +35,13 @@ return {
         python = { 'isort', 'black' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { 'prettierd', 'prettier', stop_after_first = true },
-        typescript = { 'prettierd', 'prettier', stop_after_first = true },
+        javascript = { 'prettierd', 'prettier', 'deno_fmt', stop_after_first = true },
+        javascriptreact = { 'prettierd', 'prettier', 'deno_fmt', stop_after_first = true },
+        typescript = { 'prettierd', 'prettier', 'deno_fmt', stop_after_first = true },
+        typescriptreact = { 'prettierd', 'prettier', 'deno_fmt', stop_after_first = true },
+        json = { 'prettierd', 'prettier', 'deno_fmt', stop_after_first = true },
+        graphql = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
-  }
+  },
 }
