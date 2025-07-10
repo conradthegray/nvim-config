@@ -8,16 +8,7 @@ return {
       -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
     },
-    opts = {
-      servers = {
-        lua_ls = {},
-        ts_ls = {},
-        eslint = {},
-        tailwindcss = {},
-        rust_analyzer = {},
-      },
-    },
-    config = function(_, opts)
+    config = function()
       require('mason').setup()
 
       require('mason-lspconfig').setup {
@@ -30,7 +21,15 @@ return {
         },
       }
 
-      for server, config in pairs(opts.servers) do
+      local servers = {
+        lua_ls = {},
+        ts_ls = {},
+        eslint = {},
+        tailwindcss = {},
+        rust_analyzer = {},
+      }
+
+      for server, config in pairs(servers) do
         vim.lsp.config(server, config)
         vim.lsp.enable(server)
       end
