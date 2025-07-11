@@ -49,6 +49,7 @@ return {
         { '<leader>g', group = '[G]it' },
         { '<leader>e', group = 'File [E]xplorer' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>x', group = 'Diagnostics' },
       },
     },
   },
