@@ -7,12 +7,12 @@ return {
       {
         '<leader>xx',
         '<cmd>Trouble diagnostics toggle<cr>',
-        desc = 'Diagnostics (Trouble)',
+        desc = 'Project Diagnostics',
       },
       {
         '<leader>xX',
         '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
-        desc = 'Buffer Diagnostics (Trouble)',
+        desc = 'Buffer Diagnostics',
       },
       {
         '<leader>cs',
