@@ -16,26 +16,14 @@ return {
           'lua_ls',
           'eslint',
           'ts_ls',
-          'denols',
           'rust_analyzer',
           'pyright',
         },
       }
 
-      local lspconfig = require 'lspconfig'
-
       local servers = {
         lua_ls = {},
-        ts_ls = {
-          root_dir = lspconfig.util.root_pattern { 'package.json', 'tsconfig.json' },
-        },
-        denols = {
-          root_dir = lspconfig.util.root_pattern { 'deno.json', 'deno.jsonc' },
-          init_options = {
-            lint = true,
-            unstable = true,
-          },
-        },
+        ts_ls = {},
         eslint = {},
         tailwindcss = {},
         rust_analyzer = {},
