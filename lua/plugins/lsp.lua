@@ -46,15 +46,17 @@ return {
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
+          local snacks = require 'snacks'
+
           map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
           map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
-          map('grr', require('snacks').picker.lsp_references, '[G]oto [R]eferences')
-          map('gri', require('snacks').picker.lsp_implementations, '[G]oto [I]mplementation')
-          map('grd', require('snacks').picker.lsp_definitions, '[G]oto [D]efinition')
-          map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-          map('gO', require('snacks').picker.lsp_symbols, 'Open Document Symbols')
-          map('gW', require('snacks').picker.lsp_workspace_symbols, 'Open Workspace Symbols')
-          map('grt', require('snacks').picker.lsp_type_definitions, '[G]oto [T]ype Definition')
+          map('grr', snacks.picker.lsp_references, '[G]oto [R]eferences')
+          map('gri', snacks.picker.lsp_implementations, '[G]oto [I]mplementation')
+          map('grd', snacks.picker.lsp_definitions, '[G]oto [D]efinition')
+          map('grD', snacks.picker.lsp_declarations, '[G]oto [D]eclaration')
+          map('gO', snacks.picker.lsp_symbols, 'Open Document Symbols')
+          map('gW', snacks.picker.lsp_workspace_symbols, 'Open Workspace Symbols')
+          map('grt', snacks.picker.lsp_type_definitions, '[G]oto [T]ype Definition')
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
 
