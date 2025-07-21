@@ -18,6 +18,7 @@ return {
           'ts_ls',
           'rust_analyzer',
           'pyright',
+          'jsonls',
         },
       }
 
@@ -27,6 +28,7 @@ return {
         eslint = {},
         tailwindcss = {},
         rust_analyzer = {},
+        jsonls = {},
       }
 
       for server, config in pairs(servers) do
